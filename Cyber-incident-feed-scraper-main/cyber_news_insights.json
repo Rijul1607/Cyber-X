@@ -1,0 +1,18 @@
+{
+    "incidents_by_sector": {
+        "Healthcare": 1,
+        "Finance": 1,
+        "Government": 2,
+        "Retail": 1
+    },
+    "apts_involved": {
+        "APT29": 1,
+        "APT41": 1,
+        "Lazarus Group": 2
+    },
+    "strategic_issues": {
+        "Data Breaches": 3,
+        "Ransomware": 2,
+        "Phishing": 1
+    }
+}

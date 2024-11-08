@@ -1,0 +1,999 @@
+/* Google Fonts (Poppins & Lato) */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.3s linear;
+  font-family: var(--poppins);
+}
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --blue: #3c91e6;
+  --light-blue: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    /*
+          Purple: hsl(250, 66%, 75%)
+          Blue: hsl(207, 90%, 72%)
+          Pink: hsl(356, 66%, 75%)
+          Teal: hsl(174, 63%, 62%)
+    */
+    --first-hue: 207;
+    --sat: 90%;
+    --lig: 72%;
+    --second-hue: 219;
+    --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+    --first-color-alt: hsl(var(--first-hue), var(--sat), 68%); /* -4% */
+    --title-color: hsl(var(--second-hue), 15%, 95%);
+    --text-color: hsl(var(--second-hue), 8%, 75%);
+    --text-color-light: hsl(var(--second-hue), 4%, 55%);
+    --body-color: hsl(var(--second-hue), 48%, 8%);
+    --container-color: hsl(var(--second-hue), 32%, 12%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 1.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .625rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semibold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+  
+}
+
+body {
+  background: var(--grey);
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  --light: #0c0c1e;
+  --grey: #060714;
+  --dark: #fbfbfb;
+  background: var(--grey);
+  color: var(--dark);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--light);
+  height: 100%;
+  width: 280px;
+  z-index: 2000;
+  font-family: var(--lato);
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.sidebar.hide {
+  width: 60px;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar .logo {
+  font-size: 24px;
+  font-weight: 700;
+  height: 56px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: var(--light);
+  z-index: 500;
+  padding-bottom: 20px;
+}
+
+.sidebar .logo i {
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar .side-menu {
+  width: 100%;
+  margin-top: 48px;
+}
+
+.sidebar .side-menu li {
+  height: 48px;
+  margin-left: 6px;
+  background: transparent;
+  border-radius: 48px 0 0 48px;
+  padding: 4px;
+}
+
+.sidebar .side-menu li.active {
+  position: relative;
+  background: var(--grey);
+}
+
+  
+  .sidebar .side-menu li.active::before,
+  .sidebar .side-menu li.active::after {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    right: 0;
+    z-index: -1;
+  }
+  
+  .sidebar .side-menu li.active::before {
+    top: -40px;
+    box-shadow: 20px 20px 0 var(--grey);
+  }
+  
+  .sidebar .side-menu li.active::after {
+    bottom: -40px;
+    box-shadow: 20px -20px 0 var(--grey);
+  }
+  
+  .sidebar .side-menu li a {
+    height: 100%;
+    width: 100%;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+  
+  .sidebar.hide .side-menu li a {
+    width: calc(48px - (4px * 2));
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar .side-menu li a.logout {
+    color: var(--red);
+  }
+  
+  .sidebar .side-menu li a i {
+    min-width: calc(60px - ((4px + 6px) * 2));
+    display: flex;
+    justify-content: center;
+  }
+  .content {
+    position: relative;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .sidebar.hide ~ .content {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  
+  .content nav {
+    height: 56px;
+    background: var(--light);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: var(--lato);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .content nav::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    left: 0;
+    bottom: -40px;
+    box-shadow: -20px -20px 0 var(--light);
+  }
+  
+  .content nav a {
+    color: var(--dark);
+  }
+  
+  .content nav .fa-bars {
+    cursor: pointer;
+    color: var(--dark);
+  }
+  
+  .content nav .nav-link {
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .content nav .nav-link:hover {
+    color: var(--blue);
+  }
+  
+  .content nav form {
+    max-width: 400px;
+    width: 400px;
+    margin-right: auto;
+  }
+  
+  .content nav form .form-input {
+    display: flex;
+    align-items: center;
+    height: 36px;
+  }
+  
+  .content nav form .form-input input {
+    flex-grow: 1;
+    padding: 0 16px;
+    height: 100%;
+    border: none;
+    background: var(--grey);
+    border-radius: 36px 0 0 36px;
+    outline: none;
+    width: 100%;
+    color: var(--dark);
+  }
+  
+  .content nav form .form-input button {
+    width: 36px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue);
+    color: var(--light);
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 0 36px 36px 0;
+    cursor: pointer;
+  }
+  
+  .content nav .switch-mode {
+    display: block;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background: var(--grey);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .content nav .switch-mode::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--blue);
+    border-radius: 50%;
+    transition: left 0.3s ease;
+  }
+  
+  .content nav #switch-mode:checked + .switch-mode::before {
+    left: calc(100% - (25px - 4px) - 2px);
+  }
+  /* Hiding sections by default */
+ .content-section.hide {
+    display: none; /* Hide all sections by default */
+}
+
+.content-section.active {
+    display: block; /* Show the active section */
+} 
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .content {
+      width: calc(100% - 200px);
+      left: 200px;
+    }
+  
+    .content nav .nav-link {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .content nav form .form-input input {
+      display: none;
+    }
+  
+    .content nav form.show .form-input input {
+      display: block;
+      width: 100%;
+    }
+  
+    .content nav form .form-input button {
+      width: 36px;
+      height: 36px;
+      border-radius: 0 36px 36px 0;
+      color: var(--light);
+      background: var(--red);
+    }
+  }
+  .item {
+    background-color: #f9f9f9;
+    padding: 23px;
+    border-radius: 10px;
+    font-size: 20px;
+    
+    text-align: center;
+  }
+  .itemlang {
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  body.dark .item{
+    background-color: black;
+  }
+  .startcontent {
+    border-radius: 15px; /* Adjust the value as needed */
+    padding: 20px; /* Optional: adds padding inside the div */
+    background-color: white; /* Optional: background color to make the border radius more visible */
+  }
+  body.dark .startcontent{
+    background-color: hsla(var(--second-hue),28%,16%,.7);
+  }  
+  .news-container {
+    padding: 20px;
+   
+  }
+
+  .article {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  body.dark .article {
+    background-color: #030303; /* Dark gray background for articles in dark mode */
+    color: #ffffff; /* White text color for articles in dark mode */
+  }
+
+  .article h2 {
+    margin-top: 0;
+  }
+
+  .article a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  
+
+  .article p {
+    margin: 10px 0;
+  }
+  .article p.description {
+    color: solid black; /* Description color */
+  }
+  
+  .article p small {
+    color: #808080; /* Publication date color */
+  }
+
+  .article:hover{
+    transform: scale(1.01);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+  }
+  .dashboard-content{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .user 
+{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+}
+.user img 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.cardBox 
+{
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 30px;
+}
+.cardBox .card 
+{
+	position: relative;
+	background: var(--white);
+	padding: 30px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+.cardBox .card .numbers 
+{
+	position: relative;
+	font-weight: 500;
+	font-size: 2.5em;
+	color: var(--blue);
+}
+.cardBox .card .cardName 
+{
+	color: var(--black2);
+	font-size: 1.1em;
+	margin-top: 5px;
+}
+.cardBox .card .iconBx 
+{
+	font-size: 3.5em;
+	color: var(--black2);
+}
+.cardBox .card:hover 
+{
+	background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx 
+{
+	color: var(--white);
+}
+
+/* charts */
+.graphBox
+{
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 30px;
+	min-height: 200px;
+}
+.graphBox .box 
+{
+	position: relative;
+	background: #fff;
+	padding: 20px;
+	width: 100%;
+	box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+	border-radius: 20px;
+}
+
+.details 
+{
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 30px;
+	/* margin-top: 10px; */
+}
+.details .recentOrders 
+{
+	position: relative;
+	display: grid;
+	min-height: 500px;
+	background: var(--white);
+	padding: 20px;
+	box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+	border-radius: 20px;
+}
+.cardHeader 
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+}
+.cardHeader h2 
+{
+	font-weight: 600;
+	color: var(--blue);
+}
+.btn 
+{
+	position: relative;
+	padding: 5px 10px;
+	background: var(--blue);
+	text-decoration: none;
+	color: var(--white);
+	border-radius: 6px;
+}
+.details table
+{
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+.details table thead td 
+{
+	font-weight: 600;
+}
+.details .recentOrders table tr 
+{
+	color: var(--black1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.details .recentOrders table tr:last-child 
+{
+	border-bottom: none;
+}
+.details .recentOrders table tbody tr:hover 
+{
+	background: var(--blue);
+	color: var(--white);
+}
+.details .recentOrders table tr td 
+{
+	padding: 10px;
+}
+.details .recentOrders table tr td:last-child 
+{
+	text-align: end;
+}
+.details .recentOrders table tr td:nth-child(2)
+{
+	text-align: end;
+}
+.details .recentOrders table tr td:nth-child(3)
+{
+	text-align: center;
+}
+.status.delivered
+{
+	padding: 2px 4px;
+	background: #8de02c;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.status.pending
+{
+	padding: 2px 4px;
+	background: #f9ca3f;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.status.return
+{
+	padding: 2px 4px;
+	background: #f00;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.status.inprogress
+{
+	padding: 2px 4px;
+	background: #1795ce;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.recentCustomers 
+{
+	position: relative;
+	display: grid;
+	min-height: 500px;
+	padding: 20px;
+	background: var(--white);
+	box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+	border-radius: 20px;
+}
+.recentCustomers .imgBx 
+{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.recentCustomers .imgBx img 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.recentCustomers table tr td 
+{
+	padding: 12px 10px;
+}
+.recentCustomers table tr td h4 
+{
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.2em;
+}
+.recentCustomers table tr td h4 span 
+{
+	font-size: 14px;
+	color: var(--black2);
+}
+.recentCustomers table tr:hover 
+{
+	background: var(--blue);
+	color: var(--white);
+}
+.recentCustomers table tr:hover td h4 span 
+{
+	color: var(--white);
+}
+body.dark .box{
+  background-color: #060714;
+
+}
+/* Make the canvas (charts) smaller */
+canvas {
+  width: 80%;  /* Reduce the width to 80% of the container */
+  height: 250px;  /* Reduce height from 400px to 250px */
+  margin: 20px auto;  /* Center the chart and add margin */
+  display: block;  /* Ensure it is centered properly */
+}
+
+/* Container for the Analytics Section */
+#dashboard .con {
+  padding: 10px 20px;  /* Keep padding smaller */
+  margin: 0 auto;
+  max-width: 1000px;  /* Limit the max width */
+}
+
+/* Heading styles */
+h2, h3 {
+  text-align: center;
+  margin: 15px 0;  /* Reduce margin for compactness */
+  font-size: 1.6rem;  /* Smaller font size for headings */
+}
+
+h2 {
+  font-size: 1.8rem;  /* Main heading */
+}
+
+h3 {
+  font-size: 1.3rem;  /* Subheading */
+}
+
+/* Additional styling for the graph containers */
+.graph-container {
+
+  padding: 10px;
+  max-width: 800px;  /* Limit the container width */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust responsiveness for smaller screens */
+@media (max-width: 768px) {
+  canvas {
+      width: 90%;  /* More space on smaller screens */
+      height: 200px;  /* Smaller height for mobile devices */
+  }
+  
+  h2, h3 {
+      font-size: 1.4rem;
+  }
+  
+  #dashboard .con {
+      padding: 10px;
+  }
+}
+/* Grid Container for 2x2 layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* Two columns: WCI boxes take 1fr, charts take 2fr */
+  grid-template-rows: auto auto;  /* Two rows for content */
+  gap: 30px;  /* Space between items */
+  padding: 20px;
+  margin-top: 20px;
+}
+.grid-container2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* Two columns: WCI boxes take 1fr, charts take 2fr */
+  grid-template-rows: auto auto;  /* Two rows for content */
+  gap: 30px;  /* Space between items */
+  padding: 20px;
+  
+}
+/* General Box Styling */
+.wci-container, .graph-container {
+  background-color: #ffffff;  /* White background for a clean look */
+  border-radius: 15px;  /* Rounded corners */
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth hover transition */
+}
+
+/* Hover effect for WCI boxes and charts */
+.wci-container:hover, .graph-container:hover {
+  transform: translateY(-5px);  /* Slight lift on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);  /* Increased shadow on hover */
+}
+
+/* Dark Mode Styling */
+body.dark .wci-container, body.dark .graph-container {
+  background-color: #060714;
+  color: #f1f1f1;
+}
+
+/* WCI Boxes */
+.wci-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.wci-box {
+  background-color: #f8f8f8;  /* Slightly off-white */
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  text-align: center;
+}
+.wci-box p{
+  color: #12d105;
+}
+/* Hover effect for WCI boxes */
+.wci-box:hover {
+  transform: scale(1.05);  /* Slight zoom on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* Increased shadow */
+}
+
+/* Chart Sizes */
+canvas {
+  width: 100%;
+  height: 320px;  /* Standard chart height */
+}
+
+/* Grid Layout Adjustment */
+.wci-container {
+  grid-column: span 1;  /* WCI boxes take 1/3 of the grid width */
+}
+
+.graph-container {
+  grid-column: span 1;  /* Chart containers take up equal space */
+}
+
+/* Align the "Incident by Sector" chart with the WCI boxes */
+.graph-container:nth-child(2) {
+  grid-column: span 1;  /* Aligns the bar chart with WCI boxes */
+  grid-row: span 1;     /* Keeps it in the same row as WCI section */
+}
+
+/* Ensure pie charts are equally distributed */
+.graph-container:nth-child(3), .graph-container:nth-child(4) {
+  grid-column: span 1;  /* Both pie charts take equal width */
+}
+
+/* Dark Mode for WCI boxes */
+body.dark .wci-box {
+  background-color: #2c2c3a;
+  color: #f1f1f1;
+}
+
+/* Responsive Design: Stack items on smaller screens */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr;  /* Single column layout */
+  }
+
+  .wci-boxes {
+      flex-direction: column;  /* Stack boxes vertically */
+      gap: 15px;
+  }
+}
+
+body.dark .wci-box h4 {
+  color: #ffffff;
+}
+
+body.dark .wci-box p {
+  color: #12d105;
+}
+.wci-box p{
+  padding-top: 10px;
+}
+
+.new{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 800;
+}
+.services__container{
+  grid-template-columns: repeat(2,1fr);
+  gap: 1.5rem;
+  padding-top: 1rem;
+
+}
+.services__card{
+  background-color: white;
+  padding: 3rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+
+}
+body.dark .services__card{
+  background-color: var(--container-color);
+}
+/* .services__card:hover{
+  transform: scale(1.02);
+} */
+.services__title{
+  font-size: var(--h1-font-size);
+  margin-bottom: 2.5rem;
+}
+
+.services__button{
+  color: var(--first-color);
+  font-size:var(--small-font-size) ;
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  cursor: pointer;
+}
+.services__button:hover .services__icon{
+  transform: translateX(.25rem);
+
+}
+.services__icon{
+  font-size: 1rem;
+  transition:.4s ;
+}
+
+/* Services modal */
+.services__modal{
+  position: fixed ;
+  inset: 0;
+  background-color: hsla(var(--second-hue),28%,16%,.7);
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
+  z-index: var(--z-modal);
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+.services__modal-content{
+  position: relative;
+  background-color: white ;
+  padding: 4.5rem 1.5rem 2.5rem ;
+  border-radius: 1.5rem;
+}
+
+body.dark .services__modal-content{
+  background-color: var(--body-color);
+}
+.services__modal-title, .services__modal-description{
+  text-align: center;
+
+}
+.services__modal-title{
+  font-size: var(--h3-font-size);
+  color:var(--first-color) ;
+  margin-bottom: 1rem;
+}
+.services__modal-description{
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+.services__modal-list{
+  display: grid;
+  row-gap: .75rem;
+}
+.services__modal-item{
+  display: flex;
+  align-items: flex-start;
+  column-gap: .5rem;
+}
+
+.services__modal-icon{
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+.services__modal-info{
+  font-size: var(--small-font-size);
+}
+.services__modal-close{
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+/*Active modal*/
+.active-modal{
+  opacity: 1;
+  visibility: visible;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.control li{
+  padding: 10px;
+}
+.startcontent h1{
+  font-size: var(--h1-font-size);
+}
+.control li{
+  list-style-type:'🧑🏻‍💻' ;
+}

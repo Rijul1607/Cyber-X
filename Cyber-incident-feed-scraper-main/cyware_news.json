@@ -1,0 +1,62 @@
+[
+    {
+        "title": "India Needs Better Cybersecurity for Space Systems",
+        "summary": "Dr. Sreedhara Panicker Somanath, chairman of the Indian Space Research Organization, emphasized the importance of cybersecurity for the entire system during the recent inauguration of a cybersecurity training center.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Dark%20Reading",
+        "date": "September 12, 2024"
+    },
+    {
+        "title": "Critical GeoServer Flaw Enabling Global Hack Campaigns",
+        "summary": "The flaw in GeoServer, tracked as CVE-2024-36401 and with a CVSS score of 9.8, was swiftly capitalized on by hackers who launched campaigns using botnet families and cryptominers to spread malicious tools like Goreverse, a reverse proxy server.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Bank%20Info%20Security",
+        "date": "September 9, 2024"
+    },
+    {
+        "title": "India's Critical Infrastructure Suffers Spike in Cyberattacks",
+        "summary": "India is experiencing a rise in cyberattacks on its critical infrastructure, particularly in the financial and government sectors, prompting the Reserve Bank of India to issue warnings about the need for enhanced cybersecurity measures.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Dark%20Reading",
+        "date": "August 27, 2024"
+    },
+    {
+        "title": "MegaMedusa, RipperSec’s Public Web DDoS Attack Tool",
+        "summary": "RipperSec, a pro-Palestinian hacktivist group based in Malaysia, has released MegaMedusa, a publicly available Web DDoS attack tool that simplifies launching large-scale DDoS attacks.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Radware",
+        "date": "August 22, 2024"
+    },
+    {
+        "title": "Update: Ransomware Attack on Indian Payment System Traced Back to Jenkins Bug",
+        "summary": "A recent ransomware attack on Indian payment systems has been traced back to a vulnerability in the widely used Jenkins automation system. The attack targeted a digital payment system used by many Indian banks.",
+        "link": "https://cyware.com/alerts/filter/?source_name=The%20Record",
+        "date": "August 20, 2024"
+    },
+    {
+        "title": "Feds Seize Radar/Dispossessor Ransomware Gang Servers in US and Europe",
+        "summary": "Federal authorities have seized servers belonging to the Radar/Dispossessor ransomware gang in the U.S. and Europe. The FBI dismantled dozens of servers linked to the group, which is believed to have ties to the LockBit ransomware enterprise.",
+        "link": "https://cyware.com/alerts/filter/?source_name=The%20Record",
+        "date": "August 14, 2024"
+    },
+    {
+        "title": "Ransomware Attack On Service Provider Hits 300 Small Banks Across India",
+        "summary": "The attack targeted C-Edge Technologies, a provider of banking systems for these banks. As a precaution, the National Payment Corporation of India (NPCI) has isolated these banks from the broader payment network to contain the attack.",
+        "link": "https://cyware.com/alerts/filter/?source_name=NDTV",
+        "date": "August 1, 2024"
+    },
+    {
+        "title": "Phishing Campaign Targeting Mobile Users in India Using India Post Lures",
+        "summary": "FortiGuard Labs Threat Research team has identified a fraud campaign targeting India Post users on social media, specifically iPhone users through smishing attacks. The Smishing Triad, a Chinese threat actor, is believed to be behind this campaign.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Fortinet",
+        "date": "July 27, 2024"
+    },
+    {
+        "title": "Patchwork Group Found Using Brute Ratel C4 and an Enhanced Version of PGoShell Backdoor",
+        "summary": "Patchwork hackers targeted Bhutan using the advanced Brute Ratel C4 tool, along with an updated backdoor called PGoShell. This marks the first time Patchwork has been observed using the red teaming software.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Medium",
+        "date": "July 26, 2024"
+    },
+    {
+        "title": "TransparentTribe’s Spear-Phishing Targeting Indian Government Departments",
+        "summary": "The malicious file, disguised as “Recommendation for the award of President’s.docm,” contained a VBA script that executed the CrimsonRAT remote control program, capable of stealing sensitive information.",
+        "link": "https://cyware.com/alerts/filter/?source_name=Nsfocus%20Global",
+        "date": "July 25, 2024"
+    }
+]

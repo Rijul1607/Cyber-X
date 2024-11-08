@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIH</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="sidebar">
+        <a href="#home" class="logo">
+          <i class="fab fa-slack"></i>
+          <span class="text">CybrX</span>
+        </a>
+  
+        <ul class="side-menu top">
+          <li class="active">
+            <a href="#home" class="nav-link" data-target="home">
+              <i class="fas fa-border-all"></i>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#feed-gen" class="nav-link" data-target="feed-gen">
+              <i class='bx bx-rss'></i>
+              <span class="text">Feed Generator</span>
+            </a>
+          </li>
+          <li>
+            <a href="#dashboard" class="nav-link" data-target="dashboard">
+              <i class="fas fa-chart-simple"></i>
+              <span class="text">Analytics</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content">
+        <nav>
+          <i class="fas fa-bars menu-btn"></i>
+          <input type="checkbox" hidden id="switch-mode" />
+          <label for="switch-mode" class="switch-mode"></label>
+          <form action="#">
+            <div class="form-input">
+              <input type="search" placeholder="Search  " />
+              <button class="search-btn">
+                <i class="fas fa-search search-icon"></i>
+              </button>
+            </div>
+          </form>
+        </nav>
+
+        <!-- Home Section -->
+        <main id="home" class="content-section">
+            <section class="con">
+            <div class="dashboard-content">
+                <br> <br>
+                      <div class="startcontent">
+                        <h1>What is Cyber Security</h1>
+                        <p>Cybersecurity refers to the practice of protecting systems, networks, and data from digital attacks, unauthorized access, damage, or theft. It encompasses a range of technologies, processes, and practices designed to safeguard computer systems, networks, and data from cyber threats, such as hackers, malware, ransomware, phishing, and other types of malicious activity.</p>
+                      </div>
+                      <br>
+                      
+                      
+                      <div class="startcontent">
+  <h1>Why is Cybersecurity Important?</h1>
+  <ul class="control">
+    <li class="cpoint"> <b> Data Protection:</b> Cybersecurity is crucial to safeguard our personal and business-related information.</li>
+    <li class="cpoint"><b> Financial Security:</b> It ensures the safety of online transactions and banking services.</li>
+    <li class="cpoint"> <b>Organizational Security:</b> Cyber attacks can harm not just individuals but also large organizations and companies, making cybersecurity a necessity.</li>
+    <li class="cpoint"><b>Cybersecurity</b> protects us from online threats and ensures the safety of our sensitive information.</li>
+  </ul>
+
+</div>
+                        
+                      <br> <br>
+                
+                      <section class="services section">
+                        <!-- <span class="section__subtitle">My Services</span> -->
+                        <h2 class="section__title">Types Of Threats</h2>
+        
+                        <div class="services__container container grid">
+                            <div class="services__card">
+                                <h3 class="services__title">Malware</h3>
+                                <img src="malware.png" alt="" height="200" width="200">
+                                <span class="services__button">
+                                    See More <i class='bx bx-right-arrow-alt services__icon'></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class='bx bx-x services__modal-close'></i> 
+                                        <h3 class="services__modal-title">Malware</h3>
+                                        
+        
+                                        <ul class="services__modal-list">
+                                            <li class="services__modal-item">
+                                                <!-- <i class='bx bx-check services__modal-icon'></i> -->
+                                                <p class="services__modal-info">
+                                                  Malware is also known as malicious code or malicious software. Malware is a program inserted into a system to compromise the confidentiality, integrity, or availability of data. <br>   It is done secretly and can affect your data, applications, or operating system. <br> Malware has become one of the most significant external threat to systems. Malware can cause widespread damage and disruption, and requires huge efforts within most organizations.
+                                                </p>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__card">
+                                <h3 class="services__title">Ransomware</h3>
+                                <img src="ransomware.png" alt="" height="200" width="200">
+                                <span class="services__button">
+                                    See More <i class='bx bx-right-arrow-alt services__icon'></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class='bx bx-x services__modal-close'></i> 
+                                        <h3 class="services__modal-title">Ransomware</h3>
+                                        
+        
+                                        <ul class="services__modal-list">
+                                            <li class="services__modal-item">
+                                                <!-- <i class='bx bx-check services__modal-icon'></i> -->
+                                                <p class="services__modal-info">
+                                                  Ransomware prevents or limits users from accessing their system via malware. Ransomware asks you to pay a ransom using online payment methods to regain access to your system or data. Online payment methods usually include virtual currencies such as bitcoins. Ransomware is one of the most widely used methods of attacks.
+                                                </p>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__card">
+                                <h3 class="services__title">Phishing</h3>
+                                <img src="phishing.png" alt="" height="200" width="200">
+                                <span class="services__button">
+                                    See More <i class='bx bx-right-arrow-alt services__icon'></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class='bx bx-x services__modal-close'></i> 
+                                        <h3 class="services__modal-title">Phishing</h3>
+                                        
+        
+                                        <ul class="services__modal-list">
+                                            <li class="services__modal-item">
+                                                <!-- <i class='bx bx-check services__modal-icon'></i> -->
+                                                <p class="services__modal-info">
+                                                  Phishing is a form of social engineering, including attempts to get sensitive information. Phishing attempts will appear to be from a trustworthy person or business. Cyber criminals pretend to be an official representative sending you an email or message with a warning related to your account information. The message will often ask for a response by following a link to a fake website or email address where you will provide confidential information.
+                                                </p>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__card">
+                                <h3 class="services__title">Distributed Denial of Service (DDoS) Attacks</h3>
+                                <img src="ddos.png" alt="" height="200" width="200">
+                                <span class="services__button">
+                                    See More <i class='bx bx-right-arrow-alt services__icon'></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class='bx bx-x services__modal-close'></i> 
+                                        <h3 class="services__modal-title">Distributed Denial of Service (DDoS) Attacks</h3>
+                                        
+        
+                                        <ul class="services__modal-list">
+                                            <li class="services__modal-item">
+                                                <!-- <i class='bx bx-check services__modal-icon'></i> -->
+                                                <p class="services__modal-info">
+                                                  DDoS attacks make an online service unavailable by overwhelming it with excessive traffic from many locations and sources. Website response time slows down, preventing access during a DDoS attack. Cyber criminals develop large networks of infected computers called Botnets by planting malware. A DDoS attack may not be the primary cyber crime. The attacks often create a distraction while other types of fraud and cyber intrusion are attempted.
+                                                </p>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__card">
+                                <h3 class="services__title">Social Engineering Attacks</h3>
+                                <img src="socialengg.png" alt="" height="200" width="200">
+                                <span class="services__button">
+                                    See More <i class='bx bx-right-arrow-alt services__icon'></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class='bx bx-x services__modal-close'></i> 
+                                        <h3 class="services__modal-title">Social Engineering Attacks</h3>
+                                        
+        
+                                        <ul class="services__modal-list">
+                                            <li class="services__modal-item">
+                                                <!-- <i class='bx bx-check services__modal-icon'></i> -->
+                                                <p class="services__modal-info">
+                                                  Social engineering involves tricking users into providing an entry point for malware. The victim provides sensitive information or unwittingly installs malware on their device, because the attacker poses as a legitimate actor.
+                                                </p>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__card">
+                                <h3 class="services__title">Man-in-the-Middle Attack</h3>
+                                <img src="mitm.png" alt="" height="200" width="200">
+                                <span class="services__button">
+                                    See More <i class='bx bx-right-arrow-alt services__icon'></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class='bx bx-x services__modal-close'></i> 
+                                        <h3 class="services__modal-title">Man-in-the-Middle Attack</h3>
+                                        
+        
+                                        <ul class="services__modal-list">
+                                            <li class="services__modal-item">
+                                                <!-- <i class='bx bx-check services__modal-icon'></i> -->
+                                                <p class="services__modal-info">
+                                                  A Man-in-the-Middle (MitM) attack involves intercepting the communication between two endpoints, such as a user and an application. The attacker can eavesdrop on the communication, steal sensitive data, and impersonate each party participating in the communication.
+                                                </p>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                      
+                          </div>
+                          <br> <br>
+                      <div class="startcontent">
+                        <h1>Need for Cyber News</h1>
+                        <p>Cyber news keeps us informed about new threats, security vulnerabilities, and advancements in technology. It helps us stay aware of potential dangers and how to protect our data from hackers. Staying updated with cyber news allows us to take precautionary steps to secure our digital devices.</p>
+                      </div>
+                      <br>
+                      <div class="startcontent">
+                        <h1>To control cyber threats in India</h1>
+                        <ul class="control">
+                          <li class="cpoint">
+                            <b>Strengthen Cyber Laws</b>: Regularly update and strictly enforce laws like the IT Act to deter cybercrime.
+
+                          </li>
+                          <li class="cpoint">
+                            <b>Increase Awareness:</b> Educate citizens and businesses on cybersecurity practices to prevent phishing and malware attacks.
+
+
+                          </li>
+                          <li class="cpoint">
+                            <b>Enhance Security Infrastructure:</b> Implement advanced tools like encryption, firewalls, and multi-factor authentication.
+
+
+                          </li>
+                          <li class="cpoint">
+                            <b>Build Incident Response Teams:</b> Expand CERT-In for rapid response to cyber incidents.
+
+
+                          </li>
+                          <li class="cpoint">
+                            <b>Foster Collaboration:</b> Promote cooperation between government, private sector, and international bodies for better threat intelligence sharing.
+
+
+                          </li>
+                        </ul>
+                        
+                      </div>
+                      <br>
+                      
+                  
+                  
+            </section>
+        </main>
+
+        <!-- Feed Generator Section -->
+        <main id="feed-gen" class="content-section hide">
+            <section>
+                <div class="new">CYBER FEED</div>
+                <div class="news-container"></div> <!-- Container for the RSS feed -->
+            </section>
+        </main>
+        
+
+        <!-- Dashboard Section -->
+        <main id="dashboard" class="content-section hide">
+          <section class="con">
+              <h2>Cyber Incident Insights</h2>
+              <div class="grid-container">
+              <div class="wci-container"></div>
+              <div class="graph-container">
+                  <!-- Incidents by Sector -->
+                  <h3>Incidents by Sector</h3>
+                  <canvas id="sector-chart"></canvas>
+              </div>
+              </div>
+
+              <div class="grid-container2">
+              <div class="graph-container">
+                  <!-- Strategic Issues -->
+                  <h3>Strategic Issues</h3>
+                  <canvas id="strategic-chart"></canvas>
+              </div>
+
+              <div class="graph-container">
+                <!-- APTs Involved -->
+                <h3>APTs Involved</h3>
+                <canvas id="apt-chart"></canvas>
+            </div>
+            </div>
+          </section>
+      </main>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+</body>
+</html>
